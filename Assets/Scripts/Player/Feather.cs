@@ -15,13 +15,14 @@ public class Feather : MonoBehaviour
     Vector3 dir;
 
     public FeatherManager manager;
+    public MeshCollider platformCollider;
 
 
     // Start is called before the first frame update
     void Start()
     {
         CalculateDir();
-        
+        platformCollider.enabled = false;
     }
 
     // Update is called once per frame
@@ -30,6 +31,7 @@ public class Feather : MonoBehaviour
         if (returning)
         {
             dir = (manager.featherSpawn.position - transform.position).normalized;
+            transform.LookAt(manager.featherSpawn);
         }
         if(fly || returning) transform.Translate(dir*speed*Time.deltaTime,Space.World);
         if ((transform.position - manager.featherSpawn.transform.position).magnitude > maxRange) Return();
@@ -40,6 +42,7 @@ public class Feather : MonoBehaviour
         if (other.tag != "Player" && !returning)
         {
             fly = false;
+            Platform();
         }
         else if (returning)
         {
@@ -48,10 +51,17 @@ public class Feather : MonoBehaviour
         }
     }
 
+    void Platform()
+    {
+        transform.localScale = Vector3.one*10;
+        platformCollider.enabled = true;
+    }
+
     public void Return()
     {
-        returning=true;
-        transform.LookAt(manager.featherSpawn);
+        transform.localScale = Vector3.one;
+        platformCollider.enabled = false;
+        returning =true;
     }
 
     void CalculateDir()

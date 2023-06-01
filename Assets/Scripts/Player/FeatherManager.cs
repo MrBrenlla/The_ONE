@@ -6,17 +6,21 @@ public class FeatherManager : MonoBehaviour
 {
     public int[] startFeathers;
     public Feather White, Black, Gold;
+    [SerializeField] private  Material[] feathersMaterials;
     private Queue<int> readyFeathers, jumpedFeathers;
     private List<Feather> shotedFeathers;
 
     public Transform featherSpawn;
 
-    public bool inGround { get; private set; } = false ;
-    int groundCont = 0;
+    [SerializeField] public bool inGround { get; private set; } = false ;
 
     public FeathersUI feathersUI;
 
     Rigidbody rb;
+
+    public GameObject wings;
+    public float waitTime;
+    private bool flaying = false;
 
     private void Start()
     {
@@ -33,20 +37,10 @@ public class FeatherManager : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Ground")
+        if (other.tag != "NotJumpeable")
         {
-            groundCont++;
             inGround = true;
             RestoreJumps();
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.tag == "Ground")
-        {
-            groundCont--;
-            if(groundCont == 0) inGround = false;
         }
     }
      
@@ -56,16 +50,29 @@ public class FeatherManager : MonoBehaviour
         if (inGround)
         {
             rb.velocity = new Vector3(rb.velocity.x, jumpForce, rb.velocity.z);
+            inGround = false;
             return true;
         }
-        else if(readyFeathers.TryDequeue(out feather))
+        else if(!flaying) if(readyFeathers.TryDequeue(out feather))
         {
-            rb.velocity = new Vector3(rb.velocity.x, jumpForce, rb.velocity.z);
-            jumpedFeathers.Enqueue(feather);
-            feathersUI.Refresh(readyFeathers.ToArray());
+            StartCoroutine(Fly(feather, jumpForce));
             return true;
         }
         return false;
+    }
+
+    IEnumerator Fly(int feather, float jumpForce)
+    {
+        flaying = true;
+        Renderer[] renderers = wings.GetComponentsInChildren<Renderer>();
+        foreach (Renderer r in renderers) { r.material = feathersMaterials[feather]; }
+        wings.GetComponent<Animator>().SetTrigger("Fly");
+        jumpedFeathers.Enqueue(feather);
+        feathersUI.Refresh(readyFeathers.ToArray());
+        yield return new WaitForSeconds(waitTime);
+        rb.velocity = new Vector3(rb.velocity.x, jumpForce, rb.velocity.z);
+        yield return new WaitForSeconds(waitTime*8);
+        flaying =false;
     }
 
     void RestoreJumps()
