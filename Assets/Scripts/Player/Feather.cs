@@ -5,7 +5,7 @@ using UnityEngine;
 public class Feather : MonoBehaviour
 {
 
-    public int speed;
+    public float speed;
     public int color;
     public float maxRange;
 
@@ -15,14 +15,16 @@ public class Feather : MonoBehaviour
     Vector3 dir;
 
     public FeatherManager manager;
-    public MeshCollider platformCollider;
+    public GameObject platformCollider;
 
+    Rigidbody rb;
 
     // Start is called before the first frame update
     void Start()
     {
+        rb = GetComponent<Rigidbody>();
         CalculateDir();
-        platformCollider.enabled = false;
+        platformCollider.SetActive(false);
     }
 
     // Update is called once per frame
@@ -33,7 +35,8 @@ public class Feather : MonoBehaviour
             dir = (manager.featherSpawn.position - transform.position).normalized;
             transform.LookAt(manager.featherSpawn);
         }
-        if(fly || returning) transform.Translate(dir*speed*Time.deltaTime,Space.World);
+        if(fly || returning) rb.velocity=dir*speed;
+        print(dir * speed);
         if ((transform.position - manager.featherSpawn.transform.position).magnitude > maxRange) Return();
     }
 
@@ -44,7 +47,7 @@ public class Feather : MonoBehaviour
             fly = false;
             Platform();
         }
-        else if (returning)
+        else if (returning && other.tag == "Player")
         {
             manager.Restore(this);
             Destroy(gameObject);
@@ -54,14 +57,18 @@ public class Feather : MonoBehaviour
     void Platform()
     {
         transform.localScale = Vector3.one*10;
-        platformCollider.enabled = true;
+        platformCollider.SetActive(true);
+        rb.isKinematic = true;
     }
 
     public void Return()
     {
+        if (returning) return;
+        speed = speed * 1.5f;
         transform.localScale = Vector3.one;
-        platformCollider.enabled = false;
+        platformCollider.SetActive(false);
         returning =true;
+        rb.isKinematic = false;
     }
 
     void CalculateDir()

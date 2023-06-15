@@ -6,25 +6,36 @@ public class FeatherManager : MonoBehaviour
 {
     public int[] startFeathers;
     public Feather White, Black, Gold;
-    [SerializeField] private  Material[] feathersMaterials;
+    public  Material[] feathersMaterials;
     private Queue<int> readyFeathers, jumpedFeathers;
     private List<Feather> shotedFeathers;
 
     public Transform featherSpawn;
 
-    [SerializeField] public bool inGround { get; private set; } = false ;
+    public bool inGround = false ;
 
     public FeathersUI feathersUI;
 
-    Rigidbody rb;
+    public Rigidbody rb;
 
     public GameObject wings;
     public float waitTime;
     private bool flaying = false;
 
+    public float maxGroundDistance;
+
+    private Feather nextShot;
+
+    private Animator animator;
+
+    private void Update()
+    {
+        GroundCheck();
+    }
+
     private void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        animator = GetComponent<Animator>();
 
         readyFeathers = new Queue<int>();
         foreach (int feather in startFeathers) readyFeathers.Enqueue(feather);
@@ -35,22 +46,13 @@ public class FeatherManager : MonoBehaviour
         jumpedFeathers = new Queue<int>();
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.tag != "NotJumpeable")
-        {
-            inGround = true;
-            RestoreJumps();
-        }
-    }
-     
+
     public bool Jump(float jumpForce)
     {
         int feather;
         if (inGround)
         {
             rb.velocity = new Vector3(rb.velocity.x, jumpForce, rb.velocity.z);
-            inGround = false;
             return true;
         }
         else if(!flaying) if(readyFeathers.TryDequeue(out feather))
@@ -68,7 +70,8 @@ public class FeatherManager : MonoBehaviour
         foreach (Renderer r in renderers) { r.material = feathersMaterials[feather]; }
         wings.GetComponent<Animator>().SetTrigger("Fly");
         jumpedFeathers.Enqueue(feather);
-        feathersUI.Refresh(readyFeathers.ToArray());
+        int[] feathers = readyFeathers.ToArray();
+        feathersUI.Refresh(feathers);
         yield return new WaitForSeconds(waitTime);
         rb.velocity = new Vector3(rb.velocity.x, jumpForce, rb.velocity.z);
         yield return new WaitForSeconds(waitTime*8);
@@ -77,6 +80,7 @@ public class FeatherManager : MonoBehaviour
 
     void RestoreJumps()
     {
+        if(jumpedFeathers.Count == 0) return;
         int f;
         while (jumpedFeathers.TryDequeue(out f))
         {
@@ -95,18 +99,23 @@ public class FeatherManager : MonoBehaviour
         }
     }
 
-    public bool Shot()
+    public bool TryShot()
     {
         int f;
         if (readyFeathers.TryDequeue(out f))
         {
-            Feather feather = GetFeather(f);
-            feather.manager = this;
-            shotedFeathers.Add(Instantiate(feather, featherSpawn.position, Quaternion.identity));
-            feathersUI.Refresh(readyFeathers.ToArray());
+            nextShot = GetFeather(f);
+            nextShot.manager = this;
+            animator.SetTrigger("Throw");
             return true;
         }
         return false; 
+    }
+
+    public void Shot()
+    {
+        shotedFeathers.Add(Instantiate(nextShot, featherSpawn.position, Quaternion.identity));
+        feathersUI.Refresh(readyFeathers.ToArray());
     }
 
     private bool Pop(out Feather f)
@@ -137,4 +146,29 @@ public class FeatherManager : MonoBehaviour
 
     }
 
+    private void GroundCheck()
+    {
+        LayerMask mask;
+        mask = (3);
+        mask |= (9);
+        Vector3 origin = transform.position + (Vector3.up * 0.2f);
+        Debug.DrawRay(origin,Vector3.down * maxGroundDistance);
+        RaycastHit hit;
+        if (Physics.Raycast(origin, Vector3.down, out hit,maxGroundDistance,mask,QueryTriggerInteraction.Ignore))
+        {
+            print("hit " + hit.collider.tag+"    "+hit.collider.gameObject.name);
+            if (hit.collider.tag != "NotJumpeable" && hit.collider.tag != "Whistle" && hit.collider.tag != "Player" && hit.distance < maxGroundDistance) inGround = true; 
+            else inGround = false; 
+        }
+        else inGround=false;
+        animator.SetBool("Ground", inGround);
+        if (inGround)
+        {
+            RestoreJumps();
+            WorldEnd.lastGround=transform.position;
+        }
+    }
 }
+
+
+

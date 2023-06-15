@@ -5,18 +5,20 @@ TagManager:
   serializedVersion: 2
   tags:
   - NotJumpeable
+  - Whistle
   - Ground
+  - Decor
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
   - 
   - 
-  - 
-  - 
+  - Feathers
+  - Whistle
   - 
   - 
   - 

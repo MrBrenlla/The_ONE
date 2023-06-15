@@ -11,7 +11,7 @@ public class FeathersUI : MonoBehaviour
     Image[] images;
     Sprite[] dictionary;
 
-    private void Start()
+    private void Awake()
     {
         images = new Image[] { img0, img1, img2, img3 };
         dictionary = new Sprite[] { white, black, gold};
@@ -19,6 +19,8 @@ public class FeathersUI : MonoBehaviour
 
     public void Refresh(int[] state)
     {
+        if (state == null) return;
+        if(state.Length > 4) return;
         for(int i = 0; i < state.Length; i++)
         {
             images[i].sprite = dictionary[state[i]];
