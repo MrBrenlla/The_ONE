@@ -10,7 +10,7 @@ public class LoadScene : MonoBehaviour
 
     public Respawner respawner;
 
-    public void  SceneLoad(string sceneName)
+    public static void SceneLoad(string sceneName)
     {
         Loading.level = sceneName;
         SceneManager.LoadScene("Loading");

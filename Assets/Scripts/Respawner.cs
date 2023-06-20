@@ -1,23 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Respawner : MonoBehaviour
 {
-    
-    static List<Vector3> spawns = new List<Vector3>();
+    private (Vector3,int) id;
+    static List<(Vector3,int)> spawns = new List<(Vector3, int)>();
 
     void Start()
     {
-        if (spawns.Contains(transform.position))
+        id = (transform.position, SceneManager.GetActiveScene().buildIndex);
+        if (spawns.Contains(id))
         {
-            spawns.Remove(transform.position);
+            spawns.Remove(id);
             GameObject.Find("Player").transform.position = transform.position;
         }
     }
 
     public void Add()
     {
-        spawns.Add(transform.position);
+        spawns.Add(id);
     }
 }

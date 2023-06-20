@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class FeatherManager : MonoBehaviour
@@ -7,7 +8,9 @@ public class FeatherManager : MonoBehaviour
     public int[] startFeathers;
     public Feather White, Black, Gold;
     public  Material[] feathersMaterials;
-    private Queue<int> readyFeathers, jumpedFeathers;
+    public static Queue<int> allFeathers {get; private set;} 
+    private Queue<int> readyFeathers;
+    private List<int> jumpedFeathers;
     private List<Feather> shotedFeathers;
 
     public Transform featherSpawn;
@@ -35,15 +38,17 @@ public class FeatherManager : MonoBehaviour
 
     private void Start()
     {
+        if(allFeathers!=null) foreach (int f in allFeathers) print("feather " + f);
+        StartQueues();
+        foreach (int f in allFeathers) print("feather 2ª "+f);
         animator = GetComponent<Animator>();
-
-        readyFeathers = new Queue<int>();
-        foreach (int feather in startFeathers) readyFeathers.Enqueue(feather);
+        
+        foreach (int feather in startFeathers) AddFeather(feather);
 
         feathersUI.Refresh(readyFeathers.ToArray());
 
         shotedFeathers = new List<Feather>();
-        jumpedFeathers = new Queue<int>();
+        jumpedFeathers = new List<int>();
     }
 
 
@@ -57,6 +62,7 @@ public class FeatherManager : MonoBehaviour
         }
         else if(!flaying) if(readyFeathers.TryDequeue(out feather))
         {
+            foreach (int f in readyFeathers.ToArray()) print($"{f}");
             StartCoroutine(Fly(feather, jumpForce));
             return true;
         }
@@ -69,7 +75,7 @@ public class FeatherManager : MonoBehaviour
         Renderer[] renderers = wings.GetComponentsInChildren<Renderer>();
         foreach (Renderer r in renderers) { r.material = feathersMaterials[feather]; }
         wings.GetComponent<Animator>().SetTrigger("Fly");
-        jumpedFeathers.Enqueue(feather);
+        jumpedFeathers.Add(feather);
         int[] feathers = readyFeathers.ToArray();
         feathersUI.Refresh(feathers);
         yield return new WaitForSeconds(waitTime);
@@ -81,12 +87,10 @@ public class FeatherManager : MonoBehaviour
     void RestoreJumps()
     {
         if(jumpedFeathers.Count == 0) return;
-        int f;
-        while (jumpedFeathers.TryDequeue(out f))
-        {
-            readyFeathers.Enqueue(f);
-        }
+        foreach(int f in jumpedFeathers)readyFeathers.Enqueue(f);
+        jumpedFeathers.Clear();
         feathersUI.Refresh(readyFeathers.ToArray());
+
     }
 
     Feather GetFeather(int f)
@@ -148,6 +152,7 @@ public class FeatherManager : MonoBehaviour
 
     private void GroundCheck()
     {
+        bool lastGround = inGround;
         LayerMask mask;
         mask = (3);
         mask |= (9);
@@ -156,17 +161,68 @@ public class FeatherManager : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(origin, Vector3.down, out hit,maxGroundDistance,mask,QueryTriggerInteraction.Ignore))
         {
-            print("hit " + hit.collider.tag+"    "+hit.collider.gameObject.name);
             if (hit.collider.tag != "NotJumpeable" && hit.collider.tag != "Whistle" && hit.collider.tag != "Player" && hit.distance < maxGroundDistance) inGround = true; 
             else inGround = false; 
         }
         else inGround=false;
         animator.SetBool("Ground", inGround);
-        if (inGround)
+        if (inGround && !lastGround) RestoreJumps();
+        if (inGround) WorldEnd.lastGround=transform.position;
+        
+    }
+
+    public bool AddFeather(int feather)
+    {
+        if (allFeathers.Contains(2) && allFeathers.Count>=4) RemoveGold();
+        if (allFeathers.Count < 4)
         {
-            RestoreJumps();
-            WorldEnd.lastGround=transform.position;
+            allFeathers.Enqueue(feather);
+            readyFeathers.Enqueue(feather);
+            feathersUI.Refresh(readyFeathers.ToArray());
+            return true;
         }
+        print("no hay espacio para la pluma");
+        return false;
+    }
+
+    private void StartQueues()
+    {
+        readyFeathers = new Queue<int>();
+        if (allFeathers == null) allFeathers = new Queue<int>();
+        else foreach (int feather in allFeathers.ToArray()) readyFeathers.Enqueue(feather);
+
+    }   
+
+    private void RemoveGold()
+    {
+        List<int> feathers = new List<int>(allFeathers.ToArray());
+        feathers.Remove(2);
+        allFeathers = new Queue<int>(feathers.ToArray());
+        if (readyFeathers.Contains(2))
+        {
+            feathers = new List<int>(readyFeathers.ToArray());
+            feathers.Remove(2);
+            readyFeathers = new Queue<int>(feathers.ToArray());
+        }
+        else if (jumpedFeathers.Contains(2)) jumpedFeathers.Remove(2);
+        else
+        {
+            Feather gold=null;
+            foreach(Feather f in shotedFeathers) if(f.color==2) gold = f;
+            shotedFeathers.Remove(gold);
+            Destroy(gold.gameObject);
+        }
+    }
+    
+    public static void Reset()
+    {
+        allFeathers = new Queue<int>();
+    }
+
+    public static void FreeModeReset()
+    {
+        allFeathers = new Queue<int>();
+        for(int i = 0;i<4;i++) allFeathers.Enqueue(2);
     }
 }
 

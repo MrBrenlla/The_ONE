@@ -36,7 +36,6 @@ public class Feather : MonoBehaviour
             transform.LookAt(manager.featherSpawn);
         }
         if(fly || returning) rb.velocity=dir*speed;
-        print(dir * speed);
         if ((transform.position - manager.featherSpawn.transform.position).magnitude > maxRange) Return();
     }
 

@@ -1,3 +1,4 @@
+using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -17,21 +18,34 @@ public class PlayerController : MonoBehaviour
     Animator animator;
     Rigidbody rb;
 
-    bool stop=false;
+    int stop=0;
 
     float speedX,speedZ;
 
     public FeathersUI feathersUI;
 
+    public GameObject textsMenu;
+
+    public GameObject pauseMenu;
+
     FeatherManager featherManager;
 
     public bool torch;
 
+    public bool isTalking = false;
+
+    private CinemachineFreeLook freeLook;
+
     private void Awake()
     {
+        freeLook = FindObjectOfType<CinemachineFreeLook>();
+
         featherManager = GetComponentInChildren<FeatherManager>();
         featherManager.feathersUI = feathersUI;
         featherManager.maxGroundDistance = maxGroundDistance;
+
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     void Start()
@@ -39,18 +53,28 @@ public class PlayerController : MonoBehaviour
         animator = GetComponentInChildren<Animator>();
 
         rb = GetComponentInChildren<Rigidbody>();
-
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = true;
+        animator.SetBool("Torch", torch);
     }
 
 
     // Update is called once per frame
     void Update()
     {
+
+        if (Input.GetKeyDown(KeyCode.Q) && TextManager.HasAny() && !pauseMenu.activeSelf && !isTalking)
+        {
+            textsMenu.SetActive(!textsMenu.activeSelf);
+        }
+
+        if (Input.GetKeyUp(KeyCode.Escape))
+        {
+            pauseMenu.SetActive(!pauseMenu.activeSelf);
+
+        }
+
         float mult = 1;
-        animator.SetBool("Torch", torch);
-        if (!stop)
+        
+        if (IsGoing())
         {
             speedZ = 0;
             if (Input.GetKey(KeyCode.W)) speedZ = 1;
@@ -131,8 +155,23 @@ public class PlayerController : MonoBehaviour
         if(featherManager.Jump(jumpForce))animator.SetTrigger("Jump");
     }
 
-    public void StopOrStart()
+    public void Stop(bool talking = false)
     {
-        stop = !stop;
+        stop++;
+        animator.SetBool("Moving", false);
+        freeLook.enabled = false;
+        isTalking |= talking;
+    }
+
+    public void Go(bool talkingEnd = false)
+    {
+        stop--;
+        if (stop <= 0) { freeLook.enabled = true; }
+        if(talkingEnd) isTalking = false;
+    }
+
+    public bool IsGoing()
+    {
+        return stop <= 0;
     }
 }
