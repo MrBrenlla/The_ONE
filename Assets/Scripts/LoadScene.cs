@@ -20,8 +20,8 @@ public class LoadScene : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            SceneLoad(level);
             if (respawner != null) respawner.Add();
+            SceneLoad(level);
         }
     }
 }

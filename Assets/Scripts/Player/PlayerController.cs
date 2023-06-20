@@ -161,6 +161,7 @@ public class PlayerController : MonoBehaviour
         animator.SetBool("Moving", false);
         freeLook.enabled = false;
         isTalking |= talking;
+        rb.velocity = Vector3.zero;
     }
 
     public void Go(bool talkingEnd = false)

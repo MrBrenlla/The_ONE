@@ -12,9 +12,7 @@ public class Loading : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
 
-        SceneManager.LoadScene(level);
-
-        //StartCoroutine(this.MakeTheLoad(level));
+        StartCoroutine(this.MakeTheLoad(level));
     }
 
     IEnumerator MakeTheLoad(string level)
