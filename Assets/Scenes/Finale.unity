@@ -1201,6 +1201,21 @@ GameObject:
   - component: {fileID: 723973691}
   - component: {fileID: 723973693}
   - component: {fileID: 723973694}
+  - component: {fileID: 723973706}
+  - component: {fileID: 723973705}
+  - component: {fileID: 723973704}
+  - component: {fileID: 723973703}
+  - component: {fileID: 723973702}
+  - component: {fileID: 723973701}
+  - component: {fileID: 723973700}
+  - component: {fileID: 723973699}
+  - component: {fileID: 723973698}
+  - component: {fileID: 723973697}
+  - component: {fileID: 723973696}
+  - component: {fileID: 723973695}
+  - component: {fileID: 723973709}
+  - component: {fileID: 723973707}
+  - component: {fileID: 723973708}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -1233,9 +1248,9 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 723973665}
+  - {fileID: 723973667}
   selectedCommands:
-  - {fileID: 723973693}
+  - {fileID: 723973672}
   variables:
   - {fileID: 723973658}
   description: 
@@ -1589,6 +1604,9 @@ MonoBehaviour:
   - {fileID: 723973687}
   - {fileID: 723973686}
   - {fileID: 723973685}
+  - {fileID: 723973709}
+  - {fileID: 723973708}
+  - {fileID: 723973707}
   - {fileID: 723973684}
   - {fileID: 723973682}
   - {fileID: 723973692}
@@ -1657,6 +1675,16 @@ MonoBehaviour:
   commandList:
   - {fileID: 723973693}
   - {fileID: 723973694}
+  - {fileID: 723973706}
+  - {fileID: 723973705}
+  - {fileID: 723973704}
+  - {fileID: 723973703}
+  - {fileID: 723973702}
+  - {fileID: 723973701}
+  - {fileID: 723973700}
+  - {fileID: 723973699}
+  - {fileID: 723973698}
+  - {fileID: 723973697}
   suppressAllAutoSelections: 0
 --- !u!114 &723973666
 MonoBehaviour:
@@ -1728,7 +1756,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 16
   indentLevel: 0
-  storyText: "Te acuerdas de como en el castigo final les quitaron los recuerdos
+  storyText: "\nTe acuerdas de como en el castigo final les quitaron los recuerdos
     y los enviaron al plano inferior, y como a partir de esto naci\xF3 la humanidad."
   description: 
   character: {fileID: 0}
@@ -1756,8 +1784,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 15
   indentLevel: 0
-  storyText: Te acuerdas de como se rebelaron, de como les castigaron, de como les
-    quitaron todo.
+  storyText: '
+
+    Te acuerdas de como se rebelaron, de como les castigaron, de
+    como les quitaron todo.'
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -1784,7 +1814,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 14
   indentLevel: 0
-  storyText: Son de los exiliados de la torre.
+  storyText: '
+
+    Son de los exiliados de la torre.'
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -1811,7 +1843,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 13
   indentLevel: 0
-  storyText: De hecho recuperas recuerdos que ni siquiera son tuyos.
+  storyText: '
+
+    De hecho recuperas recuerdos que ni siquiera son tuyos.'
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -2150,8 +2184,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 59.176132
-    y: 260.95053
+    x: 53.494312
+    y: 264.35962
     width: 123.863625
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -2160,7 +2194,9 @@ MonoBehaviour:
   blockName: RestartGame
   description: 
   eventHandler: {fileID: 0}
-  commandList: []
+  commandList:
+  - {fileID: 723973696}
+  - {fileID: 723973695}
   suppressAllAutoSelections: 0
 --- !u!4 &723973677
 Transform:
@@ -2191,7 +2227,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 17
   indentLevel: 0
-  storyText: "Por fin sabes por que est\xE1s aqu\xED, para recuperar la historia
+  storyText: "\nPor fin sabes por que est\xE1s aqu\xED, para recuperar la historia
     de los exiliados y recuperar lo que a la humanidad le pertenece."
   description: 
   character: {fileID: 0}
@@ -2261,7 +2297,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 28
   indentLevel: 0
-  storyText: "\nPobre alma en pena, condenada a quedarse en este p\xE1ramo inh\xF3spito
+  storyText: "\n\nPobre alma en pena, condenada a quedarse en este p\xE1ramo inh\xF3spito
     por toda la eternidad."
   description: 
   character: {fileID: 0}
@@ -2317,7 +2353,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 25
   indentLevel: 0
-  storyText: "\nYa no te quedan ideas de como salir de aqu\xED..."
+  storyText: "\n\nYa no te quedan ideas de como salir de aqu\xED"
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -2344,7 +2380,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 24
   indentLevel: 0
-  storyText: "\nEn un ataque de p\xE1nico sales corriendo y te hechas a llorar."
+  storyText: "\n\nEn un ataque de p\xE1nico sales corriendo y te hechas a llorar."
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -2372,6 +2408,7 @@ MonoBehaviour:
   itemId: 23
   indentLevel: 0
   storyText: '
+
 
     Vuelves a probar pero el resultado es el mismo.'
   description: 
@@ -2493,7 +2530,7 @@ MonoBehaviour:
   durationOLD: 0
 --- !u!114 &723973693
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -2512,7 +2549,7 @@ MonoBehaviour:
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
-  extendPrevious: 1
+  extendPrevious: 0
   fadeWhenDone: 1
   waitForClick: 1
   stopVoiceover: 1
@@ -2520,7 +2557,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &723973694
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -2539,7 +2576,395 @@ MonoBehaviour:
   voiceOverClip: {fileID: 0}
   showAlways: 1
   showCount: 1
+  extendPrevious: 1
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &723973695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 723973656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 45
+  indentLevel: 0
+  description: 
+  targetObject: {fileID: 175482172}
+  targetComponentAssemblyName: FinalFunctions, Assembly-CSharp, Version=0.0.0.0,
+    Culture=neutral, PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: FinalFunctions
+  targetMethod: EndGame
+  targetMethodText: 'EndGame (): Void'
+  methodParameters: []
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &723973696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 723973656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 44
+  indentLevel: 0
+  storyText: 
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
   extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &723973697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 723973656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 050fb9e6e72f442b3b883da8a965bdeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 43
+  indentLevel: 0
+  targetFlowchart: {fileID: 0}
+  targetBlock: {fileID: 723973676}
+  startLabel:
+    stringRef: {fileID: 0}
+    stringVal: 
+  startIndex: 0
+  callMode: 0
+--- !u!114 &723973698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 723973656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbd8c931f22994b9d90e2037fffaa770, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 42
+  indentLevel: 0
+  _targetGameObject:
+    gameObjectRef: {fileID: 0}
+    gameObjectVal: {fileID: 2091012222}
+  activeState:
+    booleanRef: {fileID: 0}
+    booleanVal: 1
+  targetGameObjectOLD: {fileID: 0}
+--- !u!114 &723973699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 723973656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3315ad2ebb85443909a1203d56d9344e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 41
+  indentLevel: 0
+  _duration:
+    floatRef: {fileID: 0}
+    floatVal: 1
+  durationOLD: 0
+--- !u!114 &723973700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 723973656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 40
+  indentLevel: 0
+  storyText: "\n\nPero eso ahora da igual. La ayuda por fin est\xE1 en camino."
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 1
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &723973701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 723973656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 39
+  indentLevel: 0
+  storyText: "\n\nTras reflexionar te das de cuanta que entonces las notas que has
+    recogido las has escrito t\xFA."
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 1
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &723973702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 723973656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 38
+  indentLevel: 0
+  storyText: Eras el primero en ir a la torre desde el castigo final de los exiliados.
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 1
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &723973703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 723973656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 37
+  indentLevel: 0
+  storyText: "Al parecer aste a la torre hace casi 100 a\xF1os para estudiarla."
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &723973704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 723973656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 36
+  indentLevel: 0
+  storyText: "\n\n{i}\"\xA1No puede ser! \xBFDe verdad eres t\xFA?\"{/i}"
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 1
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &723973705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 723973656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 35
+  indentLevel: 0
+  storyText: "\nTras recomponerte pides ayuda, aunque al parcer tu oyente queda m\xE1s
+    sorprendido que t\xFA."
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 1
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &723973706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 723973656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 34
+  indentLevel: 0
+  storyText: "\n\nUna mezcla de sorpresa y alegr\xEDa te inunda al oir a alguien
+    gracias al altar."
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 1
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &723973707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 723973656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 47
+  indentLevel: 0
+  storyText: .
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 1
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &723973708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 723973656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 48
+  indentLevel: 0
+  storyText: .
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 1
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &723973709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 723973656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 46
+  indentLevel: 0
+  storyText: .
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 1
   fadeWhenDone: 1
   waitForClick: 1
   stopVoiceover: 1
@@ -2947,7 +3372,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 79197ecfbc3a4294a89ce589dac02cf2, type: 3}
+    m_Font: {fileID: 12800000, guid: 90e013650c844e64aa96d2034a64e493, type: 3}
     m_FontSize: 65
     m_FontStyle: 0
     m_BestFit: 0

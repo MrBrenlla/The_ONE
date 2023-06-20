@@ -19,8 +19,7 @@ Material:
   m_CustomRenderQueue: -1
   stringTagMap:
     RenderType: TransparentCutout
-  disabledShaderPasses:
-  - DepthOnly
+  disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -101,7 +100,7 @@ Material:
     - _Metallic: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.005
-    - _Power: 0.7
+    - _Power: 0
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
@@ -112,8 +111,8 @@ Material:
     - _Surface: 0
     - _WorkflowMode: 1
     - _ZTest: 8
-    - _ZWrite: 0
-    - _ZWriteControl: 2
+    - _ZWrite: 1
+    - _ZWriteControl: 1
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}

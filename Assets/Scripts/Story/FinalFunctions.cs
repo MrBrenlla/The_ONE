@@ -32,15 +32,23 @@ public class FinalFunctions : MonoBehaviour
     {
         if(FeatherManager.allFeathers==null) return 2;
         int destiny = 0;
+        int[] feathers = FeatherManager.allFeathers.ToArray();
+        
+        foreach(int f in feathers) if(f == 0) destiny++;
+            else if (f == 1) destiny--;
 
-        var f = FeatherManager.allFeathers.GroupBy(x => x == 0);
-        destiny += f.Count();
 
-        f = FeatherManager.allFeathers.GroupBy(x => x == 1);
-        destiny -= f.Count();
+        print("destino: "+destiny);
 
         if (destiny < 0)return 1;
         if (destiny > 0) return 3;
         return 2;
     }
+
+    public void EndGame()
+    {
+        PlayerPrefs.SetInt("Completed",1);
+        LoadScene.SceneLoad("Inicio");
+    }
+
 }

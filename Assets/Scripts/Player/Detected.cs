@@ -23,6 +23,7 @@ public class Detected : MonoBehaviour
         r = this.GetComponent<Renderer>();
         r.material=Instantiate(baseMat);
         r.material.SetFloat("_Power", minPow);
+
     }
 
 

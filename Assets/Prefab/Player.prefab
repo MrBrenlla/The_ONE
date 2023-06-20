@@ -41,7 +41,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 278477073}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 0
+  m_Enabled: 1
   m_Radius: 0.5
   m_Height: 1
   m_Direction: 1
@@ -375,7 +375,10 @@ MonoBehaviour:
   lookAt: {fileID: 8415099810887642593}
   model: {fileID: 5448517146010436800}
   feathersUI: {fileID: 0}
+  textsMenu: {fileID: 0}
+  pauseMenu: {fileID: 0}
   torch: 0
+  isTalking: 0
 --- !u!54 &1125710303687714472
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -5,15 +5,18 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/TestScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Scenes/Inicio.unity
+    guid: 1f887c245b3e9f140a43dbce54e34239
+  - enabled: 1
+    path: Assets/Scenes/Cueva.unity
+    guid: eeb38d5a80d486847b1f38ef14b90fd3
   - enabled: 1
     path: Assets/Scenes/Exterior.unity
     guid: b58bed9c87408fb4e9cb6b1772a3fe89
   - enabled: 1
-    path: Assets/Scenes/Cueva.unity
-    guid: eeb38d5a80d486847b1f38ef14b90fd3
+    path: Assets/Scenes/Finale.unity
+    guid: 7245256608c835f4c96193626c6194ae
   - enabled: 1
     path: Assets/Scenes/Loading.unity
     guid: a3058b1bc46489e42bb5604b9e9fbe97
@@ -23,6 +26,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Templo.unity
     guid: 56cc3f2be15a37c43962557209912a83
+  - enabled: 0
+    path: Assets/Scenes/TestScene.unity
+    guid: 99c9720ab356a0642a771bea13969a05
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: 0fa835b7e8713754095c53cb3e2ef6d3,
       type: 2}
