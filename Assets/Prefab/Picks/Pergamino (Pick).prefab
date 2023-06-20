@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1829303760217448560}
   - component: {fileID: 1829303760217448562}
   - component: {fileID: 1829303760217448561}
-  m_Layer: 7
+  m_Layer: 10
   m_Name: Pergamino (Pick)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61,7 +61,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dontRestore: 1
-  textId: 1
+  textId: 3
+  dialog: {fileID: 948672766300074214, guid: 578c9ceb0dc896540b549edee403839d, type: 3}
 --- !u!1 &6134915098092418428
 GameObject:
   m_ObjectHideFlags: 0
@@ -72,7 +73,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6802766864063328198}
   - component: {fileID: 6134915098092418429}
-  m_Layer: 7
+  m_Layer: 10
   m_Name: pergamino center
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -130,21 +131,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5274608463691772333, guid: f06065962f1b59543a52bcf44334234a,
         type: 3}
-      propertyPath: m_LocalScale.x
-      value: 4.813116
-      objectReference: {fileID: 0}
-    - target: {fileID: 5274608463691772333, guid: f06065962f1b59543a52bcf44334234a,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 4.813116
-      objectReference: {fileID: 0}
-    - target: {fileID: 5274608463691772333, guid: f06065962f1b59543a52bcf44334234a,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 4.813116
-      objectReference: {fileID: 0}
-    - target: {fileID: 5274608463691772333, guid: f06065962f1b59543a52bcf44334234a,
-        type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -192,11 +178,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5274608463691772333, guid: f06065962f1b59543a52bcf44334234a,
-        type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5274608463691772337, guid: f06065962f1b59543a52bcf44334234a,
         type: 3}
@@ -306,7 +287,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 64683b804c1295d49a34ed194b36541a,
         type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 64683b804c1295d49a34ed194b36541a, type: 3}

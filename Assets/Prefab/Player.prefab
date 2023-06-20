@@ -1042,7 +1042,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9b9ec19a25e78542afeb47773341d92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startFeathers: 000000000100000002000000
+  startFeathers: 
   White: {fileID: 8585362227861518428, guid: 9e338e956d395b84bbc03cc44dfdf336, type: 3}
   Black: {fileID: 8585362227861518428, guid: 7a69fb902dc27a249995472e70d127b8, type: 3}
   Gold: {fileID: 8585362227861518428, guid: 1ada7797e1ce420498a88c880eb8576c, type: 3}

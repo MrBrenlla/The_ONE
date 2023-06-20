@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3910296419920913206}
   - component: {fileID: 3910296419920913204}
   - component: {fileID: 3910296419920913207}
-  m_Layer: 7
+  m_Layer: 10
   m_Name: White Feather (Pick)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73,7 +73,7 @@ GameObject:
   - component: {fileID: 8841652798616884032}
   - component: {fileID: 9163809300332070077}
   - component: {fileID: 372815043656176421}
-  m_Layer: 7
+  m_Layer: 10
   m_Name: Plano
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -156,7 +156,7 @@ GameObject:
   - component: {fileID: 7702396274729545362}
   - component: {fileID: 3370095479192214262}
   - component: {fileID: 1237202701597837733}
-  m_Layer: 7
+  m_Layer: 10
   m_Name: Plano.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -238,7 +238,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8164638650384575616}
   - component: {fileID: 8792520935239890491}
-  m_Layer: 7
+  m_Layer: 10
   m_Name: plumas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
