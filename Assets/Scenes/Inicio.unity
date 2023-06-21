@@ -398,6 +398,60 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 231067038}
   m_CullTransparentMesh: 1
+--- !u!1 &254007501
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 254007503}
+  - component: {fileID: 254007502}
+  m_Layer: 0
+  m_Name: WindCreator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &254007502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 254007501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54d3e51903cb27c4b8d644e56269b6ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  winds:
+  - {fileID: 4616885058882530837, guid: a7db89058716b944b98b7e948c1bd389, type: 3}
+  - {fileID: 971641113239710121, guid: cbb522ddcaa69f847b5004dea0313e76, type: 3}
+  - {fileID: 7584252218125700201, guid: 03234b13a92325f499369cb942fff8ae, type: 3}
+  minCD: 0.5
+  maxtCD: 4
+  numThreads: 4
+  maxRadiusDistance: 35
+  maxHeigthDistance: 5
+  origin: {fileID: 254007503}
+--- !u!4 &254007503
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 254007501}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -16.8, y: 1.71, z: -64.6}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &255111826
 GameObject:
   m_ObjectHideFlags: 0
@@ -1555,7 +1609,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06f79ce9bd93c19488da7a3a1ea6d086, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ForceFreeMode: 1
+  ForceFreeMode: 0
   freeMode: {fileID: 1858727892}
 --- !u!114 &2123174560
 MonoBehaviour:
