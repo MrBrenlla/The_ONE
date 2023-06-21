@@ -22,4 +22,9 @@ public class Respawner : MonoBehaviour
     {
         spawns.Add(id);
     }
+
+    public static void Reset()
+    {
+        spawns.Clear();
+    }
 }

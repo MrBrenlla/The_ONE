@@ -27,6 +27,7 @@ public class StartMenu : MonoBehaviour
         FeatherManager.Reset();
         TextManager.Reset();
         JustOnce.Reset();
+        Respawner.Reset();
         LoadScene.SceneLoad("Raices");
     }
 
@@ -41,6 +42,7 @@ public class StartMenu : MonoBehaviour
         FeatherManager.FreeModeReset();
         TextManager.Reset();
         JustOnce.Reset();
+        Respawner.Reset();
         LoadScene.SceneLoad("Raices");
     }
 }
