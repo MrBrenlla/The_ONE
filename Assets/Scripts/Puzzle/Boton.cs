@@ -19,7 +19,7 @@ public class Boton : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Feather"))
+        if (other.tag == "Feather")
         {
             count++;
             state = true;
@@ -29,7 +29,7 @@ public class Boton : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Feather"))
+        if (other.tag == "Feather" )
         {
             count--;
             if (count == 0)

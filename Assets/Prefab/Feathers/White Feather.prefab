@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 399646209059528880}
   m_Layer: 8
   m_Name: Collider 2
-  m_TagString: Untagged
+  m_TagString: Feather
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -71,7 +71,7 @@ GameObject:
   - component: {fileID: 8945296765732038458}
   m_Layer: 8
   m_Name: Collider 3
-  m_TagString: Untagged
+  m_TagString: Feather
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -118,7 +118,7 @@ GameObject:
   - component: {fileID: 8567643833529145337}
   m_Layer: 8
   m_Name: White Feather
-  m_TagString: NotJumpeable
+  m_TagString: Feather
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -151,9 +151,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a365cdb60d894114ba12ebb127772aab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 15
   color: 0
-  maxRange: 30
+  maxRange: 40
   manager: {fileID: 0}
   platformCollider: {fileID: 7538322628382980194}
 --- !u!65 &5169632770272081923
@@ -199,7 +199,7 @@ GameObject:
   - component: {fileID: 9015066144058582002}
   m_Layer: 8
   m_Name: Collider 0
-  m_TagString: Untagged
+  m_TagString: Feather
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -270,7 +270,7 @@ GameObject:
   - component: {fileID: 9194347504162035797}
   m_Layer: 8
   m_Name: Collider 3 (1)
-  m_TagString: Untagged
+  m_TagString: Feather
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -316,7 +316,7 @@ GameObject:
   - component: {fileID: 1784968044584530105}
   m_Layer: 0
   m_Name: Plano
-  m_TagString: Untagged
+  m_TagString: Feather
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -397,7 +397,7 @@ GameObject:
   - component: {fileID: 7829336617473462044}
   m_Layer: 8
   m_Name: plumas
-  m_TagString: Untagged
+  m_TagString: Feather
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -431,7 +431,7 @@ GameObject:
   - component: {fileID: 3683638075674705460}
   m_Layer: 0
   m_Name: Collider
-  m_TagString: Untagged
+  m_TagString: Feather
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -469,7 +469,7 @@ GameObject:
   - component: {fileID: 919463272192322105}
   m_Layer: 8
   m_Name: Plano.002
-  m_TagString: Untagged
+  m_TagString: Feather
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -553,7 +553,7 @@ GameObject:
   - component: {fileID: 30695618580959957}
   m_Layer: 8
   m_Name: Collider 1
-  m_TagString: Untagged
+  m_TagString: Feather
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
