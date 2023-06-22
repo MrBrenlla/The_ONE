@@ -6983,15 +6983,7 @@ MonoBehaviour:
     height: 859
   selectedBlocks:
   - {fileID: 1298829064}
-  selectedCommands:
-  - {fileID: 1298829062}
-  - {fileID: 1298829071}
-  - {fileID: 1298829060}
-  - {fileID: 1298829067}
-  - {fileID: 1298829061}
-  - {fileID: 1298829070}
-  - {fileID: 1298829069}
-  - {fileID: 1298829068}
+  selectedCommands: []
   variables: []
   description: 
   stepPause: 0
@@ -9469,22 +9461,22 @@ PrefabInstance:
     - target: {fileID: 2482942004826738797, guid: 13ae73592a2b9284ca1f9c5438f7238f,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.15613592
+      value: 0.15613593
       objectReference: {fileID: 0}
     - target: {fileID: 2482942004826738797, guid: 13ae73592a2b9284ca1f9c5438f7238f,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.001147889
+      value: 0.0011478865
       objectReference: {fileID: 0}
     - target: {fileID: 2482942004826738797, guid: 13ae73592a2b9284ca1f9c5438f7238f,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.9877082
+      value: 0.9877083
       objectReference: {fileID: 0}
     - target: {fileID: 2482942004826738797, guid: 13ae73592a2b9284ca1f9c5438f7238f,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0072614895
+      value: -0.0072614737
       objectReference: {fileID: 0}
     - target: {fileID: 2482942004884653823, guid: 13ae73592a2b9284ca1f9c5438f7238f,
         type: 3}
@@ -10969,7 +10961,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1774157428
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
