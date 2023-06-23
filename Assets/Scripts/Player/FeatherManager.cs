@@ -80,6 +80,7 @@ public class FeatherManager : MonoBehaviour
         feathersUI.Refresh(feathers);
         yield return new WaitForSeconds(waitTime);
         rb.velocity = new Vector3(rb.velocity.x, jumpForce, rb.velocity.z);
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Efects/Volar", transform.position);
         yield return new WaitForSeconds(waitTime*8);
         flaying =false;
     }

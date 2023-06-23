@@ -1,9 +1,9 @@
 // This code is part of the Fungus library (https://github.com/snozbot/fungus)
 // It is released for free under the MIT open source license (https://github.com/snozbot/fungus/blob/master/LICENSE)
 
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections.Generic;
-
+    
 namespace Fungus
 {
     /// <summary>
@@ -22,6 +22,8 @@ namespace Fungus
     /// </summary>
     public class WriterAudio : MonoBehaviour, IWriterListener
     {
+        [SerializeField] public string nextEvent=null;
+
         [Tooltip("Volume level of writing sound effects")]
         [Range(0,1)]
         [SerializeField] protected float volume = 1f;
@@ -93,7 +95,7 @@ namespace Fungus
 
         protected virtual void Play(AudioClip audioClip)
         {
-            if (targetAudioSource == null ||
+            if (
                 (audioMode == AudioMode.SoundEffect && soundEffect == null && audioClip == null) ||
                 (audioMode == AudioMode.Beeps && beepSounds.Count == 0))
             {
@@ -122,8 +124,6 @@ namespace Fungus
             else if (audioMode == AudioMode.Beeps)
             {
                 // Use beeps defined in WriterAudio
-                targetAudioSource.clip = null;
-                targetAudioSource.loop = false;
                 playBeeps = true;
             }
         }
@@ -141,15 +141,8 @@ namespace Fungus
 
         protected virtual void Stop()
         {
-            if (targetAudioSource == null)
-            {
-                return;
-            }
 
-            // There's an audible click if you call audioSource.Stop() so instead we just switch off
-            // looping and let the audio stop automatically at the end of the clip
-            targetVolume = 0f;
-            targetAudioSource.loop = false;
+
             playBeeps = false;
             playingVoiceover = false;
         }
@@ -164,10 +157,7 @@ namespace Fungus
             targetVolume = volume;
         }
 
-        protected virtual void Update()
-        {
-            targetAudioSource.volume = Mathf.MoveTowards(targetAudioSource.volume, targetVolume, Time.deltaTime * 5f);
-        }
+
 
         #region IWriterListener implementation
 
@@ -224,22 +214,14 @@ namespace Fungus
 
             if (playBeeps && beepSounds.Count > 0)
             {
-                if (!targetAudioSource.isPlaying)
+                if (nextBeepTime < Time.realtimeSinceStartup)
                 {
-                    if (nextBeepTime < Time.realtimeSinceStartup)
-                    {
-                        targetAudioSource.clip = beepSounds[Random.Range(0, beepSounds.Count)];
+                    int r = Random.Range(0, 3);
 
-                        if (targetAudioSource.clip != null)
-                        {
-                            targetAudioSource.loop = false;
-                            targetVolume = volume;
-                            targetAudioSource.Play();
+                    nextEvent = ("Beep" + r);
 
-                            float extend = targetAudioSource.clip.length;
-                            nextBeepTime = Time.realtimeSinceStartup + extend;
-                        }
-                    }
+                    float extend = beepSounds[r].length;
+                    nextBeepTime = Time.realtimeSinceStartup + extend;
                 }
             }
         }

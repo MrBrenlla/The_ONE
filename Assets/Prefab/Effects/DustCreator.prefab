@@ -46,6 +46,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Dust: {fileID: 4207790269935317194, guid: b118f38a9ee51a24498d3424353019d6, type: 3}
+  enableDust: 1
+  FMODEventName: Pasos arena
 --- !u!65 &9192061274413831315
 BoxCollider:
   m_ObjectHideFlags: 0

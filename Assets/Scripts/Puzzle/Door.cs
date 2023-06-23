@@ -24,6 +24,8 @@ public class Door : MonoBehaviour
         if(open)
         {
             animator.SetTrigger("Open");
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Efects/Puerta", transform.position);
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Efects/Resuelto");
             Destroy(this);
         }
     }

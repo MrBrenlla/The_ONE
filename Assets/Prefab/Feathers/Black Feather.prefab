@@ -144,6 +144,7 @@ GameObject:
   - component: {fileID: 8585362227861518428}
   - component: {fileID: 5169632770272081923}
   - component: {fileID: 8567643833529145337}
+  - component: {fileID: -7281628382668288233}
   m_Layer: 8
   m_Name: Black Feather
   m_TagString: Feather
@@ -179,7 +180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a365cdb60d894114ba12ebb127772aab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 15
+  speed: 10
   color: 1
   maxRange: 40
   manager: {fileID: 0}
@@ -213,6 +214,37 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 112
   m_CollisionDetection: 2
+--- !u!114 &-7281628382668288233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1383766551567407684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1286952848
+      Data2: 1326802631
+      Data3: 558172079
+      Data4: -1620224109
+    Path: event:/Efects/Lanzar pluma
+  Event: 
+  PlayEvent: 1
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &1640712614445608001
 GameObject:
   m_ObjectHideFlags: 0
@@ -340,6 +372,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 605203484763092724}
+  - component: {fileID: 4837738689764276445}
   m_Layer: 0
   m_Name: Collider
   m_TagString: Feather
@@ -368,6 +401,37 @@ Transform:
   m_Father: {fileID: 7829336617473462044}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4837738689764276445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6204948698265098033}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1817454717
+      Data2: 1305251487
+      Data3: -334216825
+      Data4: 733008289
+    Path: event:/Efects/Clavar pluma
+  Event: 
+  PlayEvent: 11
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &6619679448253134589
 GameObject:
   m_ObjectHideFlags: 0
