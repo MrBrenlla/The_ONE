@@ -12,7 +12,7 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: Brais Garci Brenlla
+  companyName: "Brais Garc\xEDa Brenlla"
   productName: The ONE
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
@@ -134,7 +134,7 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 0
-  bundleVersion: 0.2.0
+  bundleVersion: 1.0
   preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
@@ -275,7 +275,7 @@ PlayerSettings:
   - m_BuildTarget: 
     m_Icons:
     - serializedVersion: 2
-      m_Icon: {fileID: 2800000, guid: 62955e2782fd34c5ca3e78712625ae50, type: 3}
+      m_Icon: {fileID: 2800000, guid: b82023b6aaa099b4d9e8b76064e17289, type: 3}
       m_Width: 128
       m_Height: 128
       m_Kind: 0

@@ -9,6 +9,7 @@ public class FeatherPick : Pick
     {
         
         player.GetComponentInChildren<FeatherManager>().AddFeather(color);
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Efects/Collect");
 
     }
 

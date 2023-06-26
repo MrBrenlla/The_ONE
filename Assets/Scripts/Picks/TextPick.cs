@@ -14,7 +14,8 @@ public class TextPick : Pick
         TextManager.Found(textId);
         foreach (bool b in TextManager.textActive) if (b) cont++;
         if (cont ==1 ) Instantiate(dialog).GetComponent<Stoper>().controller=player.GetComponent<PlayerController>();
-        print("textos: "+cont);
+
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Efects/Collect");
     }
 
 

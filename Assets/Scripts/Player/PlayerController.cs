@@ -28,6 +28,8 @@ public class PlayerController : MonoBehaviour
 
     public GameObject pauseMenu;
 
+    public GameObject pointer;
+
     FeatherManager featherManager;
 
     public bool torch;
@@ -38,7 +40,7 @@ public class PlayerController : MonoBehaviour
 
     private void Awake()
     {
-        freeLook = FindObjectOfType<CinemachineFreeLook>();
+        
 
         featherManager = GetComponentInChildren<FeatherManager>();
         featherManager.feathersUI = feathersUI;
@@ -50,6 +52,7 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+        freeLook = FindObjectOfType<CinemachineFreeLook>();
         animator = GetComponentInChildren<Animator>();
 
         rb = GetComponentInChildren<Rigidbody>();
@@ -159,6 +162,7 @@ public class PlayerController : MonoBehaviour
     {
         stop++;
         animator.SetBool("Moving", false);
+        pointer.SetActive(false);
         freeLook.enabled = false;
         isTalking |= talking;
         rb.velocity = Vector3.zero;
@@ -167,7 +171,11 @@ public class PlayerController : MonoBehaviour
     public void Go(bool talkingEnd = false)
     {
         stop--;
-        if (stop <= 0) { freeLook.enabled = true; }
+        if (stop <= 0)
+        {
+            freeLook.enabled = true;
+            pointer.SetActive(true);
+        }
         if(talkingEnd) isTalking = false;
     }
 

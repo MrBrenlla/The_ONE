@@ -74,7 +74,7 @@ AnimatorController:
   - serializedVersion: 5
     m_Name: Sitt
     m_StateMachine: {fileID: -3916366593113991392}
-    m_Mask: {fileID: 0}
+    m_Mask: {fileID: 31900000, guid: 3c50f2bdeb1319547b0c43ac7fde8f35, type: 2}
     m_Motions: []
     m_Behaviours: []
     m_BlendingMode: 0
@@ -113,7 +113,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Sit
-  m_Speed: 0.8
+  m_Speed: 0.6
   m_CycleOffset: 0
   m_Transitions: []
   m_StateMachineBehaviours: []

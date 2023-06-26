@@ -226,6 +226,7 @@ GameObject:
   - component: {fileID: 6589912198526591722}
   - component: {fileID: 3483783174451333091}
   - component: {fileID: 2358121967096637984}
+  - component: {fileID: 4703972410006027103}
   m_Layer: 5
   m_Name: StoryText
   m_TagString: Untagged
@@ -315,6 +316,20 @@ MonoBehaviour:
   m_FlexibleWidth: 1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
+--- !u!114 &4703972410006027103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7030151916592401044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e828510d75b77944ac8d9f5a80a0287, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  normal: {r: 1, g: 1, b: 1, a: 1}
+  easy: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1 &8867591042705063541
 GameObject:
   m_ObjectHideFlags: 0
@@ -384,7 +399,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 44661c1c220828044a2cd32e2987608e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d576986e126875e4ca09af365d93aa99, type: 3}
   m_Type: 1
   m_PreserveAspect: 1
   m_FillCenter: 1

@@ -985,6 +985,7 @@ GameObject:
   - component: {fileID: 5678963632455445827}
   - component: {fileID: 1742778162491930425}
   - component: {fileID: 5684103177106082353}
+  - component: {fileID: 5327051960524199938}
   m_Layer: 0
   m_Name: Cuerpo
   m_TagString: Player
@@ -1057,6 +1058,18 @@ MonoBehaviour:
   wings: {fileID: 242695609675843464}
   waitTime: 0.1
   maxGroundDistance: 0
+--- !u!114 &5327051960524199938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5009247404049709049}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea623f6b8f07bde4ba37a6dc00d90c8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5062048953584833698
 GameObject:
   m_ObjectHideFlags: 0
