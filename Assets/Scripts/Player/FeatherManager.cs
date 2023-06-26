@@ -31,6 +31,8 @@ public class FeatherManager : MonoBehaviour
 
     private Animator animator;
 
+    public GameObject tooMuchFeathers;
+
     private void Update()
     {
         GroundCheck();
@@ -182,7 +184,7 @@ public class FeatherManager : MonoBehaviour
             feathersUI.Refresh(readyFeathers.ToArray());
             return true;
         }
-        print("no hay espacio para la pluma");
+        Instantiate(tooMuchFeathers);
         return false;
     }
 

@@ -3,7 +3,16 @@ guid: b9b9ec19a25e78542afeb47773341d92
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - White: {instanceID: 0}
+  - Black: {instanceID: 0}
+  - Gold: {instanceID: 0}
+  - featherSpawn: {instanceID: 0}
+  - feathersUI: {instanceID: 0}
+  - rb: {instanceID: 0}
+  - wings: {instanceID: 0}
+  - tooMuchFeathers: {fileID: 948672766300074214, guid: af6598d99a2cdd6478aad1ef3032aba5,
+      type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

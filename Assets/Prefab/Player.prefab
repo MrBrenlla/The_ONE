@@ -377,6 +377,7 @@ MonoBehaviour:
   feathersUI: {fileID: 0}
   textsMenu: {fileID: 0}
   pauseMenu: {fileID: 0}
+  pointer: {fileID: 0}
   torch: 0
   isTalking: 0
 --- !u!54 &1125710303687714472
@@ -1058,6 +1059,8 @@ MonoBehaviour:
   wings: {fileID: 242695609675843464}
   waitTime: 0.1
   maxGroundDistance: 0
+  tooMuchFeathers: {fileID: 948672766300074214, guid: af6598d99a2cdd6478aad1ef3032aba5,
+    type: 3}
 --- !u!114 &5327051960524199938
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4813,6 +4816,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: DustCreator
+      objectReference: {fileID: 0}
+    - target: {fileID: 9192061274413831315, guid: 10da08534afa9214ab127f3e0a450124,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 0.17511876
+      objectReference: {fileID: 0}
+    - target: {fileID: 9192061274413831315, guid: 10da08534afa9214ab127f3e0a450124,
+        type: 3}
+      propertyPath: m_Center.x
+      value: 0.010938859
+      objectReference: {fileID: 0}
+    - target: {fileID: 9192061274413831315, guid: 10da08534afa9214ab127f3e0a450124,
+        type: 3}
+      propertyPath: m_Center.y
+      value: -0.07277044
+      objectReference: {fileID: 0}
+    - target: {fileID: 9192061274413831315, guid: 10da08534afa9214ab127f3e0a450124,
+        type: 3}
+      propertyPath: m_Center.z
+      value: -0.0068972604
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 10da08534afa9214ab127f3e0a450124, type: 3}

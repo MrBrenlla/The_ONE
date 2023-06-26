@@ -13,6 +13,8 @@ public class PauseMenu : MonoBehaviour
     public Slider music;
     public Slider efects;
 
+    bool restarting = false;
+
     private void Awake()
     {
         playerController = FindObjectOfType<PlayerController>();
@@ -37,6 +39,7 @@ public class PauseMenu : MonoBehaviour
 
     private void OnDisable()
     {
+        if (restarting) return;
         playerController.Go();
         if (playerController.IsGoing())
         {
@@ -53,6 +56,7 @@ public class PauseMenu : MonoBehaviour
 
     public void Restart()
     {
+        restarting = true;
         LoadScene.SceneLoad("Inicio");
     }
 

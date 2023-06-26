@@ -77,7 +77,14 @@ public class Feather : MonoBehaviour
 
         RaycastHit hit;
 
-        if (Physics.Raycast(ray, out hit))
+        LayerMask mask;
+        mask = (3);
+        mask |= (5);
+        mask |= (9);
+        mask |= (10);
+        mask |= (11);
+
+        if (Physics.Raycast(ray, out hit,maxRange,mask, QueryTriggerInteraction.Ignore))
         {
             dir = (hit.point - transform.position).normalized;
             transform.LookAt(hit.point);
