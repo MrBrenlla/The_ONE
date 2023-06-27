@@ -17,6 +17,7 @@ public class Loading : MonoBehaviour
 
     IEnumerator MakeTheLoad(string level)
     {
+        print("loading " + level);
         yield return new WaitForSeconds(2f);
 
         AsyncOperation operation = SceneManager.LoadSceneAsync(level);

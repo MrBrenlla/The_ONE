@@ -16,6 +16,7 @@ public class Feather : MonoBehaviour
 
     public FeatherManager manager;
     public GameObject platformCollider;
+    public Transform returningPoint;
 
     Rigidbody rb;
 
@@ -32,11 +33,11 @@ public class Feather : MonoBehaviour
     {
         if (returning)
         {
-            dir = (manager.featherSpawn.position - transform.position).normalized;
-            transform.LookAt(manager.featherSpawn);
+            dir = (returningPoint.position - transform.position).normalized;
+            transform.LookAt(returningPoint);
         }
         if(fly || returning) rb.velocity=dir*speed;
-        if ((transform.position - manager.featherSpawn.transform.position).magnitude > maxRange) Return();
+        if ((transform.position - returningPoint.position).magnitude > maxRange) Return();
     }
 
     private void OnTriggerEnter(Collider other)

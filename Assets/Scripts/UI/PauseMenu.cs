@@ -39,7 +39,6 @@ public class PauseMenu : MonoBehaviour
 
     private void OnDisable()
     {
-        if (restarting) return;
         playerController.Go();
         if (playerController.IsGoing())
         {
@@ -56,7 +55,7 @@ public class PauseMenu : MonoBehaviour
 
     public void Restart()
     {
-        restarting = true;
+        Time.timeScale = 1;
         LoadScene.SceneLoad("Inicio");
     }
 

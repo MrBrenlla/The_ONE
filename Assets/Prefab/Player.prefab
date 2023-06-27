@@ -403,7 +403,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1125710303687714476}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 2f95aa4377a47044aa25335384351432, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.18440604
@@ -1061,6 +1061,7 @@ MonoBehaviour:
   maxGroundDistance: 0
   tooMuchFeathers: {fileID: 948672766300074214, guid: af6598d99a2cdd6478aad1ef3032aba5,
     type: 3}
+  returningPoint: {fileID: 1125710304153986311}
 --- !u!114 &5327051960524199938
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -27,11 +27,13 @@ public class FeatherManager : MonoBehaviour
 
     public float maxGroundDistance;
 
-    private Feather nextShot;
+    private Feather nextShot = null;
 
     private Animator animator;
 
     public GameObject tooMuchFeathers;
+
+    public Transform returningPoint;
 
     private void Update()
     {
@@ -109,6 +111,7 @@ public class FeatherManager : MonoBehaviour
     public bool TryShot()
     {
         int f;
+        if(nextShot!=null) return false;
         if (readyFeathers.TryDequeue(out f))
         {
             nextShot = GetFeather(f);
@@ -121,8 +124,11 @@ public class FeatherManager : MonoBehaviour
 
     public void Shot()
     {
-        shotedFeathers.Add(Instantiate(nextShot, featherSpawn.position, Quaternion.identity));
+        Feather feather = Instantiate(nextShot, featherSpawn.position, Quaternion.identity);
+        feather.returningPoint = returningPoint;
+        shotedFeathers.Add(feather);
         feathersUI.Refresh(readyFeathers.ToArray());
+        nextShot = null;
     }
 
     private bool Pop(out Feather f)
