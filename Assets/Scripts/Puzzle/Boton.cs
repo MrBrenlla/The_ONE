@@ -21,6 +21,7 @@ public class Boton : MonoBehaviour
     {
         if (other.tag == "Feather")
         {
+            if(!state) FMODUnity.RuntimeManager.PlayOneShot("event:/Efects/ButtonOn",transform.position);
             count++;
             state = true;
             this.animator.SetBool("State", true);
@@ -31,11 +32,13 @@ public class Boton : MonoBehaviour
     {
         if (other.tag == "Feather" )
         {
+            print("exit "+count);
             count--;
             if (count == 0)
             {
                 state = false;
                 this.animator.SetBool("State", false);
+                FMODUnity.RuntimeManager.PlayOneShot("event:/Efects/ButtonOff", transform.position);
             }
         }
     }

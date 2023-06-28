@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 399646209059528880}
   m_Layer: 8
   m_Name: Collider 2
-  m_TagString: Feather
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -71,7 +71,7 @@ GameObject:
   - component: {fileID: 8945296765732038458}
   m_Layer: 8
   m_Name: Collider 3
-  m_TagString: Feather
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -157,6 +157,7 @@ MonoBehaviour:
   maxRange: 40
   manager: {fileID: 0}
   platformCollider: {fileID: 7538322628382980194}
+  returningPoint: {fileID: 0}
 --- !u!65 &5169632770272081923
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -208,7 +209,7 @@ MonoBehaviour:
     Path: event:/Efects/Lanzar pluma
   Event: 
   PlayEvent: 1
-  StopEvent: 0
+  StopEvent: 2
   AllowFadeout: 1
   TriggerOnce: 0
   Preload: 0
@@ -231,7 +232,7 @@ GameObject:
   - component: {fileID: 9015066144058582002}
   m_Layer: 8
   m_Name: Collider 0
-  m_TagString: Feather
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -302,7 +303,7 @@ GameObject:
   - component: {fileID: 9194347504162035797}
   m_Layer: 8
   m_Name: Collider 3 (1)
-  m_TagString: Feather
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -464,7 +465,7 @@ GameObject:
   - component: {fileID: 5474118849753562620}
   m_Layer: 0
   m_Name: Collider
-  m_TagString: Feather
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -617,7 +618,7 @@ GameObject:
   - component: {fileID: 30695618580959957}
   m_Layer: 8
   m_Name: Collider 1
-  m_TagString: Feather
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

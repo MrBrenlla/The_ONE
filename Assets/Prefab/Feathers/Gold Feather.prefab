@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6685331760928558573}
   m_Layer: 8
   m_Name: Collider 3
-  m_TagString: Feather
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -98,6 +98,7 @@ MonoBehaviour:
   maxRange: 40
   manager: {fileID: 0}
   platformCollider: {fileID: 4214969561353199524}
+  returningPoint: {fileID: 0}
 --- !u!65 &5169632770272081923
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -172,7 +173,7 @@ GameObject:
   - component: {fileID: 7658460325653929543}
   m_Layer: 8
   m_Name: Collider 1
-  m_TagString: Feather
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -243,7 +244,7 @@ GameObject:
   - component: {fileID: 9152048829418323756}
   m_Layer: 0
   m_Name: Collider
-  m_TagString: Feather
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -396,7 +397,7 @@ GameObject:
   - component: {fileID: 4955360095378506752}
   m_Layer: 8
   m_Name: Collider 0
-  m_TagString: Feather
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -584,7 +585,7 @@ GameObject:
   - component: {fileID: 3120352963632800175}
   m_Layer: 8
   m_Name: Collider 3 (1)
-  m_TagString: Feather
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -630,7 +631,7 @@ GameObject:
   - component: {fileID: 5750282440418913336}
   m_Layer: 8
   m_Name: Collider 2
-  m_TagString: Feather
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
