@@ -38,6 +38,8 @@ public class PlayerController : MonoBehaviour
 
     private CinemachineFreeLook freeLook;
 
+    private float mult = 1;
+
     private void Awake()
     {
         
@@ -75,7 +77,7 @@ public class PlayerController : MonoBehaviour
 
         }
 
-        float mult = 1;
+        
         
         if (IsGoing())
         {
@@ -87,11 +89,17 @@ public class PlayerController : MonoBehaviour
             if (Input.GetKey(KeyCode.D)) speedX = 1;
             else if (Input.GetKey(KeyCode.A)) speedX = -1;
 
-            if (Input.GetKey(KeyCode.LeftShift))
+            if (Input.GetKeyDown(KeyCode.LeftShift) && (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D)))
             {
                 animator.SetBool("CanRun", true);
                 mult= speedMultiplier;
-            }else animator.SetBool("CanRun", false);
+            }
+
+            if(Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.D))
+            {
+                mult = 1;
+                animator.SetBool("CanRun", false);
+            }
 
             if (Input.GetKeyDown(KeyCode.Space))
             {
@@ -166,6 +174,8 @@ public class PlayerController : MonoBehaviour
         freeLook.enabled = false;
         isTalking |= talking;
         rb.velocity = Vector3.zero;
+        mult = 1;
+        animator.SetBool("CanRun", false);
     }
 
     public void Go(bool talkingEnd = false)
