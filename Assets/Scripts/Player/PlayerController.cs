@@ -95,7 +95,7 @@ public class PlayerController : MonoBehaviour
                 mult= speedMultiplier;
             }
 
-            if(Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.D))
+            if(!(Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D)))
             {
                 mult = 1;
                 animator.SetBool("CanRun", false);
